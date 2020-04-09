@@ -9,7 +9,7 @@ class Gun{
   bool shooting = false;
   void shoot(GameEntity e){
     if(shooting == true){
-      new Bullet(e.x, e.y, 10, 10, e.game, e.shootVector, 10);
+      new Bullet(e.x, e.y, 10, 10, e.game, e.shootVector, 10, e);
     }
     new Timer(new Duration(milliseconds: 100), () => shoot(e));
   }
@@ -17,8 +17,8 @@ class Gun{
 
 class Bullet implements GameEntity{
   void draw(CanvasRenderingContext2D ctx){
-    ctx.fillRect(x-(xSize/2), y-(ySize/2), xSize, ySize);
-    move();
+    ctx.fillRect(GameObject.getRenderX(x, ctx, origin)-(xSize/2), GameObject.getRenderY(y, ctx, origin)-(ySize/2), xSize, ySize);
+    move(ctx);
   }
   int xSize;
   int ySize;
@@ -28,18 +28,18 @@ class Bullet implements GameEntity{
   Vector moveVector;
   Vector shootVector;
   Game game;
-  Bullet(this.x, this.y, this.xSize, this.ySize, this.game, this.moveVector, this.speed){
-    print("new bullet made");
+  GameObject origin;
+  Bullet(this.x, this.y, this.xSize, this.ySize, this.game, this.moveVector, this.speed, this.origin){
     game.gameObjects.add(this);
     if(moveVector != new Vector.zero()) {
       moveVector = moveVector.norm() * speed;
     }
   }
-  void move(){
+  void move(ctx){
     x += moveVector.x;
     y += moveVector.y;
-    if(x > game.ctx.canvas.width || y > game.ctx.canvas.height || x < 0|| x < 0){
+    if(GameObject.getRenderX(x, ctx, this) > game.ctx.canvas.width || GameObject.getRenderY(y, ctx, this) > game.ctx.canvas.height || GameObject.getRenderX(x, ctx, this) < 0|| GameObject.getRenderY(y, ctx, this) < 0){
       game.gameObjects.remove(this);
-    };
+      }
   }
 }
