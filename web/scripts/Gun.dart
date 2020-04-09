@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:html';
 import 'dart:math';
 import 'GameObject.dart';
@@ -6,8 +7,11 @@ import 'Game.dart';
 
 class Gun{
   bool shooting = false;
-  void shoot(GameEntity origin){
-    new Bullet(origin.x, origin.y, 10, 10, origin.game, origin.shootVector, 10);
+  void shoot(GameEntity e){
+    if(shooting == true){
+      new Bullet(e.x, e.y, 10, 10, e.game, e.shootVector, 10);
+    }
+    new Timer(new Duration(milliseconds: 100), () => shoot(e));
   }
 }
 
@@ -34,5 +38,8 @@ class Bullet implements GameEntity{
   void move(){
     x += moveVector.x;
     y += moveVector.y;
+    if(x > game.ctx.canvas.width || y > game.ctx.canvas.height || x < 0|| x < 0){
+      game.gameObjects.remove(this);
+    };
   }
 }

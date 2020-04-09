@@ -20,8 +20,10 @@ class Player implements GameEntity{
     window.onKeyDown.listen(keyDownHandler);
     window.onKeyUp.listen(keyUpHandler);
     this.moveVector = new Vector.zero();
-
     this.shootVector = new Vector(0, -5);
+    for(Gun gun in this.guns.toSet()){
+      gun.shoot(this);
+    }
   }
   int speed = 5;
   int angle = null;
@@ -34,7 +36,7 @@ class Player implements GameEntity{
     if(e.keyCode >= 48 && e.keyCode <= 57){
       int gunNum = e.keyCode-48;
       try{
-        guns[gunNum].shoot(this);
+        guns[gunNum].shooting = true;
       } catch(e){}
     } else {
       switch (e.keyCode) {

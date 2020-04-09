@@ -7,7 +7,8 @@ import "dart:math";
 void main() {
  CanvasElement canvas = new CanvasElement()
   ..width = 500
-  ..height = 500;
+  ..height = 500
+  ..id = "canvas";
  document.body.append(canvas);
  CanvasRenderingContext2D ctx = canvas.context2D;
  Game game = new Game(ctx);
