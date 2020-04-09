@@ -5,7 +5,7 @@ import "Vector.dart";
 import "Game.dart";
 class Player implements GameEntity{
   void draw(CanvasRenderingContext2D ctx){
-    ctx.fillRect(x-(xSize/2), y-(ySize/2), xSize, ySize);
+    ctx.fillRect(ctx.canvas.width/2-(xSize/2), ctx.canvas.height/2-(ySize/2), xSize, ySize);
     move();
   }
   List<Gun> guns = new List(10);
@@ -13,6 +13,8 @@ class Player implements GameEntity{
   int ySize;
   int x;
   int y;
+  int drawX;
+  int drawY;
   Vector moveVector;
   Vector shootVector;
   Game game;
