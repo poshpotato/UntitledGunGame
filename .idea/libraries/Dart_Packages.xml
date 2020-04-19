@@ -19,7 +19,7 @@
         <entry key="LoaderLib">
           <value>
             <list>
-              <option value="$USER_HOME$/AppData/Roaming/Pub/Cache/git/LoaderLib-7be4a8bceb0e2a0fb8ba71cf27a2b9f11c405889/lib" />
+              <option value="$USER_HOME$/AppData/Roaming/Pub/Cache/git/LoaderLib-ffa68972986ba443b653c6053be6cd82ae5dee2f/lib" />
             </list>
           </value>
         </entry>
@@ -390,7 +390,7 @@
         <entry key="path">
           <value>
             <list>
-              <option value="$USER_HOME$/AppData/Roaming/Pub/Cache/hosted/pub.dartlang.org/path-1.6.4/lib" />
+              <option value="$USER_HOME$/AppData/Roaming/Pub/Cache/hosted/pub.dartlang.org/path-1.7.0/lib" />
             </list>
           </value>
         </entry>
@@ -602,7 +602,7 @@
     <CLASSES>
       <root url="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/CommonLib-57fb78093ee4cd956cbb1dea87bcaf270c70679c/lib" />
       <root url="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/ImageLib-2800f6e4b1771d9475cd81c4cb68cd26fd43eb9d/lib" />
-      <root url="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/LoaderLib-7be4a8bceb0e2a0fb8ba71cf27a2b9f11c405889/lib" />
+      <root url="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/LoaderLib-ffa68972986ba443b653c6053be6cd82ae5dee2f/lib" />
       <root url="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/RenderingLib-3dcd8b08135731b372ee992414092fbd8c44cf7e/lib" />
       <root url="file://$USER_HOME$/AppData/Roaming/Pub/Cache/hosted/pub.dartlang.org/analyzer-0.35.4/lib" />
       <root url="file://$USER_HOME$/AppData/Roaming/Pub/Cache/hosted/pub.dartlang.org/analyzer_plugin-0.2.1/lib" />
@@ -655,7 +655,7 @@
       <root url="file://$USER_HOME$/AppData/Roaming/Pub/Cache/hosted/pub.dartlang.org/node_preamble-1.4.8/lib" />
       <root url="file://$USER_HOME$/AppData/Roaming/Pub/Cache/hosted/pub.dartlang.org/package_config-1.1.0/lib" />
       <root url="file://$USER_HOME$/AppData/Roaming/Pub/Cache/hosted/pub.dartlang.org/package_resolver-1.0.10/lib" />
-      <root url="file://$USER_HOME$/AppData/Roaming/Pub/Cache/hosted/pub.dartlang.org/path-1.6.4/lib" />
+      <root url="file://$USER_HOME$/AppData/Roaming/Pub/Cache/hosted/pub.dartlang.org/path-1.7.0/lib" />
       <root url="file://$USER_HOME$/AppData/Roaming/Pub/Cache/hosted/pub.dartlang.org/pedantic-1.9.0/lib" />
       <root url="file://$USER_HOME$/AppData/Roaming/Pub/Cache/hosted/pub.dartlang.org/pool-1.4.0/lib" />
       <root url="file://$USER_HOME$/AppData/Roaming/Pub/Cache/hosted/pub.dartlang.org/protobuf-1.0.1/lib" />

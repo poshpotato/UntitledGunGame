@@ -1,6 +1,7 @@
 import "dart:html";
 import "GameObject.dart";
 import 'Gun.dart';
+import 'Obstacle.dart';
 import "Player.dart";
 import "Level.dart";
 import "dart:math";
@@ -41,7 +42,9 @@ class Game {
      gunlist.add(new Gun());
    }
    level = new Level(this, "../images/levels/Level1Back.png");
-   player = new Player((ctx.canvas.width/2).round(), (ctx.canvas.width/2).round(), 50, 50, this, gunlist);
+   Obstacle obstacle = new Obstacle(10, 10, 50, 50, this);
+   gameObjects.add(obstacle);
+   player = new Player((ctx.canvas.width/2).round()-25, (ctx.canvas.width/2).round()-25, 50, 50, this, gunlist);
     window.animationFrame.then(renderGame);
   }
 }

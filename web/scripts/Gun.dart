@@ -17,6 +17,7 @@ class Gun{
 
 class Bullet implements GameEntity{
   void draw(CanvasRenderingContext2D ctx){
+    ctx.fillStyle = "#000000";
     ctx.fillRect(GameObject.getRenderX(x, ctx, origin)-(xSize/2), GameObject.getRenderY(y, ctx, origin)-(ySize/2), xSize, ySize);
     move(ctx);
   }
@@ -40,8 +41,24 @@ class Bullet implements GameEntity{
   void move(ctx){
     x += moveVector.x;
     y += moveVector.y;
-    if(GameObject.getRenderX(x, ctx, this) > game.ctx.canvas.width || GameObject.getRenderY(y, ctx, this) > game.ctx.canvas.height || GameObject.getRenderX(x, ctx, this) < 0|| GameObject.getRenderY(y, ctx, this) < 0){
-      game.gameObjects.remove(this);
+    checkCollisions();
+  }
+  void collisionEffects(GameEntity origin, GameEntity effectee){
+    if(effectee is GameMob && effectee != this.origin){
+      effectee.health -= this.damage;
+    }
+  }
+
+  void checkCollisions() {
+    for (GameEntity obj in this.game.gameObjects) {
+      if (obj == this) {
+      }else {
+        if (obj.x < this.x + this.xSize && obj.x + obj.xSize > this.x &&
+            obj.y < this.y + this.ySize && obj.y + obj.ySize > this.y) {
+          // collision detected!
+          obj.collisionEffects(obj, this);
+        }
       }
+    }
   }
 }

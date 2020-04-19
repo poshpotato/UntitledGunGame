@@ -5,6 +5,7 @@ import "Vector.dart";
 import "Game.dart";
 class Player implements GameMob{
   void draw(CanvasRenderingContext2D ctx){
+    ctx.fillStyle = "#000000";
     ctx.fillRect(ctx.canvas.width/2-(xSize/2), ctx.canvas.height/2-(ySize/2), xSize, ySize);
     move();
     checkCollisions();
@@ -121,8 +122,14 @@ class Player implements GameMob{
     for(GameEntity obj in this.game.gameObjects){
       if (obj.x < this.x + this.xSize && obj.x + obj.xSize > this.x && obj.y < this.y + this.ySize && obj.y + obj.ySize > this.y) {
         // collision detected!
-        if(!(obj is Bullet)) this.health -= obj.damage;
+          obj.collisionEffects(obj, this);
       }
+    }
+  }
+
+  void collisionEffects(GameEntity origin, GameEntity effectee){
+    if(effectee is GameMob){
+      effectee.health -= this.damage;
     }
   }
 }
