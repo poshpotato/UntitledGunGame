@@ -25,4 +25,13 @@ abstract class GameEntity extends GameObject{
   GameEntity(x, y, xSize, ySize, game) : super(x, y, xSize, ySize, game);
   Vector moveVector;
   Vector shootVector;
+  int damage;
+}
+
+abstract class GameMob extends GameEntity{
+  GameMob(x, y, xSize, ySize, game) : super(x, y, xSize, ySize, game);
+  Vector moveVector;
+  Vector shootVector;
+  int damage;
+  int health;
 }

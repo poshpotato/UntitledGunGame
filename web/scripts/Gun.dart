@@ -10,8 +10,8 @@ class Gun{
   void shoot(GameEntity e){
     if(shooting == true){
       new Bullet(e.x, e.y, 10, 10, e.game, e.shootVector, 10, e);
+      new Timer(new Duration(milliseconds: 100), () => shoot(e));
     }
-    new Timer(new Duration(milliseconds: 100), () => shoot(e));
   }
 }
 
@@ -25,6 +25,7 @@ class Bullet implements GameEntity{
   int x;
   int y;
   int speed;
+  int damage;
   Vector moveVector;
   Vector shootVector;
   Game game;
@@ -34,6 +35,7 @@ class Bullet implements GameEntity{
     if(moveVector != new Vector.zero()) {
       moveVector = moveVector.norm() * speed;
     }
+    damage = 5;
   }
   void move(ctx){
     x += moveVector.x;
